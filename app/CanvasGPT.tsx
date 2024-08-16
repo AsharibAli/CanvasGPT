@@ -59,7 +59,7 @@ const CanvasGPT = () => {
               textColor: "#000000",
               text: "Build with ❤️ by",
               company: "Asharib Ali",
-              companyLink: "https://github.com/AsharibAli/",
+              companyLink: "https://x.com/0xAsharib",
             },
           },
         },

@@ -81,7 +81,7 @@ const CanvasGPT = () => {
         type="module"
         strategy="afterInteractive"
         onLoad={() => setIsScriptLoaded(true)}
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       />
     </div>
   );

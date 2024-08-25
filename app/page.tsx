@@ -1,6 +1,6 @@
 import React from "react";
-import CanvasGPT from "./CanvasGPT";
 import { Metadata } from "next";
+import UnlockCanvas from "@/components/UnlockCanvas";
 
 export const metadata: Metadata = {
   other: {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <div>
-      <CanvasGPT />
+      <UnlockCanvas />
     </div>
   );
 };

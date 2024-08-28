@@ -131,7 +131,7 @@ export default function UnlockCanvas() {
       console.log("Building transaction...");
       let transactionBuilder = await create(umiRef.current, {
         asset: assetAddress,
-        name: "My NFT",
+        name: "CanvasGPT NFT",
         uri: "ipfs://bafybeiahfsvde7tjzr3rkk26ullka4w7kajxu3uisbf2yau4ud36vm257q",
       });
       console.log("Transaction builder created:", transactionBuilder);

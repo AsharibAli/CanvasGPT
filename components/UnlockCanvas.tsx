@@ -16,7 +16,9 @@ import { umiUseNoopSigner } from "@/lib/umiUtils";
 export default function UnlockCanvas() {
   const [isReady, setIsReady] = useState(false);
   const [accessGranted, setAccessGranted] = useState(false);
-  const [transactionStatus, setTransactionStatus] = useState<string | null>(null);
+  const [transactionStatus, setTransactionStatus] = useState<string | null>(
+    null
+  );
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [address, setAddress] = useState<string | null>(null);
   const [username, setUsername] = useState<string | null>(null);
@@ -56,7 +58,6 @@ export default function UnlockCanvas() {
     const storedToken = localStorage.getItem("nftToken");
     const storedAddress = localStorage.getItem("userAddress");
     if (storedToken && storedAddress === address) {
-      // Validate the token before granting access
       if (validateToken(storedToken)) {
         console.log("Access granted based on valid token.");
         setAccessGranted(true);
@@ -85,7 +86,9 @@ export default function UnlockCanvas() {
 
     try {
       console.log("Connecting wallet...");
-      const response = await canvasClientRef.current.connectWallet("solana:103");
+      const response = await canvasClientRef.current.connectWallet(
+        "solana:103"
+      );
       console.log("Wallet connect response:", response);
       if (response && response.untrusted.success) {
         const publicKey = new PublicKey(response.untrusted.address);
@@ -94,7 +97,6 @@ export default function UnlockCanvas() {
         localStorage.setItem("userAddress", publicKey.toString());
         setErrorMessage(null);
 
-        // Initialize Umi with NoopSigner
         console.log("Initializing Umi with NoopSigner...");
         const umi = createUmi("https://api.devnet.solana.com")
           .use(mplCore())
@@ -115,7 +117,9 @@ export default function UnlockCanvas() {
   const mintNFT = async () => {
     if (!address) {
       console.error("No wallet connected. Cannot mint NFT.");
-      setErrorMessage("Wallet is not connected. Please connect your wallet first.");
+      setErrorMessage(
+        "Wallet is not connected. Please connect your wallet first."
+      );
       return;
     }
 
@@ -179,7 +183,9 @@ export default function UnlockCanvas() {
       console.error("Minting error:", error);
       console.log("Detailed error stack trace:", error.stack);
       setTransactionStatus("Minting failed.");
-      setErrorMessage("An error occurred during the minting process. Please try again.");
+      setErrorMessage(
+        "An error occurred during the minting process. Please try again."
+      );
     }
   };
 
@@ -193,14 +199,18 @@ export default function UnlockCanvas() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-2xl mb-4">💗 Welcome {username ? username : "User"} to the CanvasGPT 🤖</h1>
+      <h1 className="text-2xl mb-4">
+        💗 Welcome {username ? username : "User"} to the CanvasGPT 🤖
+      </h1>
       <h2 className="text-2xl mb-4">➡️ powered by Metaplex Core 🙌</h2>
       {address ? (
         <h3 className="text-sm mb-4 text-gray-500">
           <strong>Connected Wallet Address:</strong> {address}
         </h3>
       ) : (
-        <p className="text-sm mb-4 text-red-500">Please connect your wallet to proceed.</p>
+        <p className="text-sm mb-4 text-red-500">
+          Please connect your wallet to proceed.
+        </p>
       )}
       {!address ? (
         <Button onClick={handleConnectWallet}>Connect Wallet</Button>
@@ -217,11 +227,10 @@ export default function UnlockCanvas() {
 
       {transactionStatus && (
         <p
-          className={`mt-4 ${
-            transactionStatus.includes("successfully")
+          className={`mt-4 ${transactionStatus.includes("successfully")
               ? "text-green-500"
               : "text-red-500"
-          }`}
+            }`}
         >
           {transactionStatus}
         </p>

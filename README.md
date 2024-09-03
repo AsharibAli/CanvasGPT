@@ -16,7 +16,7 @@
 
 CanvasGPT assists developers in building apps on the DSCVR Platform through a conversational UI, powered by **Metaplex Core for NFT Generation as a authorization, OpenAI Assistants, GPT-4o model, and the latest tech-stack.** <br>
 
-It helps developers code, fix, and test their canvas to build any type of applications within DSCVR Environment. Simply enter a prompt in the UI to get accurate answers. Specially designed for the DSCVR community of developers, CanvasGPT was developed by Asharib Ali as a submission for the **DSCVR Buildathon - Canvas Embedded Apps Fest** <br>
+It helps developers code, fix, and test their canvas to build any type of applications within DSCVR Environment. Simply enter a prompt in the UI to get accurate answers. Specially designed for the DSCVR community of developers, CanvasGPT is developed by Asharib Ali as a submission for the **DSCVR Buildathon - Canvas Embedded Apps Fest** <br>
 
 **CanvasGPT** offers many great features to help developers build and ship quickly on **DSCVR Platform.** <br>
 
